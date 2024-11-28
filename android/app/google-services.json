@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "865015229843",
+    "project_id": "batminton-65659",
+    "storage_bucket": "batminton-65659.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:865015229843:android:c6f3617ca28ee929ef4c66",
+        "android_client_info": {
+          "package_name": "com.example.batminton_shop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCE1W6I2F4jnBHVmCghcQqyC-g7o8ZfAnw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
