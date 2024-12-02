@@ -1,98 +1,84 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 
 import '../../../../constants/colors.dart';
 import '../../../../constants/image_strings.dart';
 import '../../../../constants/sizes.dart';
 import '../../../../constants/text_strings.dart';
-import '../welcome_screen/welcome_screen.dart';
+import '../../controllers/splash_screen_controller.dart';
 
+class SplashScreen extends StatelessWidget {
+  SplashScreen({Key? key}) : super(key: key);
 
-
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
-
-  @override
-  State<SplashScreen> createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
-
-  bool animate = false;
-
-  @override
-  void initState() {
-    super.initState();
-    startAnimation();
-  }
-
-  Future startAnimation() async {
-    await Future.delayed(const Duration(milliseconds: 500));
-    setState(() { animate = true; });
-    await Future.delayed(const Duration(milliseconds: 5000));
-    Get.to(WelcomeScreen());
-  }
+  final splashController = Get.put(SplashScreenController());
 
   @override
   Widget build(BuildContext context) {
+    SplashScreenController.find.startAnimation();
+
     return Scaffold(
       body: Stack(
         children: [
-          AnimatedPositioned(
-            duration: const Duration(milliseconds: 1600),
-            top: animate ? 0 : -30,
-            left: animate ? 0 : -30,
-            child: AnimatedOpacity(
+          Obx(
+            () => AnimatedPositioned(
               duration: const Duration(milliseconds: 1600),
-              opacity: animate ? 1 : 0,
-              child: const Image(image: AssetImage(tSplashTopIcon)),
-            ),
-          ),
-          AnimatedPositioned(
-            duration: const Duration(milliseconds: 2000),
-            top: 80,
-            left: animate ? tDefaultSize : -80,
-            child: AnimatedOpacity(
-              duration: const Duration(milliseconds: 2000),
-              opacity: animate ? 1 : 0,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    tAppName,
-                    style: Theme.of(context).textTheme.headlineLarge,
-                  ),
-                  Text(
-                    tAppTagLine,
-                    style: Theme.of(context).textTheme.headlineMedium,
-                  )
-                ],
+              top: splashController.animate.value ? 0 : -30,
+              left: splashController.animate.value ? 0 : -30,
+              child: AnimatedOpacity(
+                duration: const Duration(milliseconds: 1600),
+                opacity: splashController.animate.value ? 1 : 0,
+                child: const Image(image: AssetImage(tSplashTopIcon)),
               ),
             ),
           ),
-          AnimatedPositioned(
-            duration: const Duration(milliseconds: 2400),
-            bottom: animate ? 100 : 0,
-            child: AnimatedOpacity(
+          Obx(
+            () => AnimatedPositioned(
               duration: const Duration(milliseconds: 2000),
-              opacity: animate ? 1 : 0,
-              child: const Image(image: AssetImage(tSplashImage)),
+              top: 80,
+              left: splashController.animate.value ? tDefaultSize : -80,
+              child: AnimatedOpacity(
+                duration: const Duration(milliseconds: 2000),
+                opacity: splashController.animate.value ? 1 : 0,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(tAppName,
+                        style: Theme.of(context).textTheme.headlineMedium),
+                    Text(tAppTagLine,
+                        style: Theme.of(context).textTheme.headlineSmall)
+                  ],
+                ),
+              ),
             ),
           ),
-          AnimatedPositioned(
-            duration: const Duration(milliseconds: 2400),
-            bottom: animate ? 60 : 0,
-            right: tDefaultSize,
-            child: AnimatedOpacity(
-              duration: const Duration(milliseconds: 2000),
-              opacity: animate ? 1 : 0,
-              child: Container(
-                width: tSplashContainerSize,
-                height: tSplashContainerSize,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(100),
-                  color: tPrimaryColor,
+          Obx(
+            () => AnimatedPositioned(
+              duration: const Duration(milliseconds: 2400),
+              bottom: splashController.animate.value ? 100 : 0,
+              child: AnimatedOpacity(
+                duration: const Duration(milliseconds: 2000),
+                opacity: splashController.animate.value ? 1 : 0,
+                child: const Image(image: AssetImage(tSplashImage)),
+              ),
+            ),
+          ),
+          Obx(
+            () => AnimatedPositioned(
+              duration: const Duration(milliseconds: 2400),
+              bottom: splashController.animate.value ? 60 : 0,
+              right: tDefaultSize,
+              child: AnimatedOpacity(
+                duration: const Duration(milliseconds: 2000),
+                opacity: splashController.animate.value ? 1 : 0,
+                child: Container(
+                  width: tSplashContainerSize,
+                  height: tSplashContainerSize,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100),
+                    color: tPrimaryColor,
+                  ),
                 ),
               ),
             ),
