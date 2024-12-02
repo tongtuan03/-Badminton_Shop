@@ -5,3 +5,5 @@ const String tSplashImage="assets/images/splash_images/logo_native_splash.jpg";
 const String tOnBoardingImage1="assets/images/onboarding_images/onboard_image1.jpg";
 const String tOnBoardingImage2="assets/images/onboarding_images/onboard_image2.jpg";
 const String tOnBoardingImage3="assets/images/onboarding_images/onboard_image3.jpg";
+
+const String tWelcomeScreenImage="assets/images/welcome_images/welcome_image.png";

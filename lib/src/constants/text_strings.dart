@@ -12,3 +12,9 @@ const String tOnBoardingSubTitle3="Let start your journey with us on this amazin
 const String tOnBoardingCounter1="1/3";
 const String tOnBoardingCounter2="2/3";
 const String tOnBoardingCounter3="3/3";
+
+const String tWelcomeTitle="Build Awesome Apps";
+const String tWelcomeSubTitle="Let start your journey with us on this amazing and easy";
+
+const String tLogin="Login";
+const String tSignup="Signup";
