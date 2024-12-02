@@ -18,3 +18,14 @@ const String tWelcomeSubTitle="Let start your journey with us on this amazing an
 
 const String tLogin="Login";
 const String tSignup="Signup";
+
+const String tLoginTitle="Welcome back,";
+const String tLoginSubTitle="Make it work ,make it right ,make it fast";
+const String tRememberMe="Remember Me?";
+const String tAlreadyHaveAnAccount="Already Have An Account";
+const String tDontHaveAnAccount="I Dont Have An Account ?";
+const String tEmail="Email";
+const String tPassword="Password";
+const String tForgetPassword="Forget Password";
+const String tSignInWithGoogle="Sign In With Google";
+
