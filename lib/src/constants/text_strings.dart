@@ -34,4 +34,21 @@ const String tSignInWithGoogle="Sign In With Google";
 const String tSignUpTitle="Get On Board";
 const String tSignUpSubTitle="Create your profile to start your Journey with us...";
 
+const String tForgetPasswordTitle="Make Selection";
+const String tForgetPasswordSubTitle="Select one of options given below to reset your password";
+const String tResetViaEMail="Reset via E-mail Verification";
+const String tResetViaPhone="Reset via Phone Verification";
+
+const String tForgetPhoneSubTitle="Enter your registered Phone No to receive OTP";
+const String tForgetEmailSubTitle="Enter your registered E-Mail No to receive OTP";
+
+const String tNext="Next";
+
+const String tOtpTitle="CO\nDE";
+const String tOtpSubTitle="Verification";
+const String tOtpMessage="Enter the verification code sent at";
+
+
+
+
 
