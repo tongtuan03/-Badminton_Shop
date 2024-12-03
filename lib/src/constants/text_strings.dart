@@ -26,6 +26,12 @@ const String tAlreadyHaveAnAccount="Already Have An Account";
 const String tDontHaveAnAccount="I Dont Have An Account ?";
 const String tEmail="Email";
 const String tPassword="Password";
+const String tFullName="Full Name";
+const String tPhoneNo="Phone Number";
+
 const String tForgetPassword="Forget Password";
 const String tSignInWithGoogle="Sign In With Google";
+const String tSignUpTitle="Get On Board";
+const String tSignUpSubTitle="Create your profile to start your Journey with us...";
+
 

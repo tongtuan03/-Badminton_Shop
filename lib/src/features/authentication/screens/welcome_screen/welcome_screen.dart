@@ -1,3 +1,4 @@
+import 'package:batminton_shop/src/features/authentication/screens/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -48,7 +49,7 @@ class WelcomeScreen extends StatelessWidget {
                 const SizedBox(width: 10.0),
                 Expanded(
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () => Get.to(() => const SignUpScreen()),
                     child: Text(tSignup.toUpperCase()),
                   ),
                 ),

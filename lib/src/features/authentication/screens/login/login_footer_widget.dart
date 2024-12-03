@@ -1,4 +1,7 @@
+import 'package:batminton_shop/src/features/authentication/screens/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../../../../constants/image_strings.dart';
 import '../../../../constants/sizes.dart';
@@ -26,7 +29,7 @@ class LoginFooterWidget extends StatelessWidget {
         ),
         const SizedBox(height: tFormHeight - 20),
         TextButton(
-          onPressed: () {},
+          onPressed: () => Get.to(() => const SignUpScreen()),
           child: Text.rich(
             TextSpan(
                 text: tDontHaveAnAccount,
