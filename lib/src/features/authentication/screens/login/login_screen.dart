@@ -1,3 +1,4 @@
+import 'package:batminton_shop/src/features/authentication/screens/login/login_footer_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -24,8 +25,9 @@ class LoginScreen extends StatelessWidget {
               children: [
                 FormHeaderWidget(image: tWelcomeScreenImage, title: tLoginTitle, subTitle: tLoginSubTitle),
                 const LoginFormWidget(),
-                const TFormDividerWidget(),
-                SocialFooter(text1: tDontHaveAnAccount, text2: tSignup, onPressed: () => Get.off(() => const SignUpScreen())),
+                LoginFooterWidget()
+                // const TFormDividerWidget(),
+                // SocialFooter(text1: tDontHaveAnAccount, text2: tSignup, onPressed: () => Get.off(() => const SignUpScreen())),
               ],
             ),
           ),

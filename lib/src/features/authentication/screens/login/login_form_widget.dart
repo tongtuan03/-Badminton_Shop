@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
-import 'package:login_flutter_app/src/common_widgets/buttons/primary_button.dart';
-import '../../../../../utils/helper/helper_controller.dart';
+// import 'package:login_flutter_app/src/common_widgets/buttons/primary_button.dart';
+// import '../../../../../utils/helper/helper_controller.dart';
+import '../../../../common_widgets/buttons/primary_button.dart';
 import '../../../../constants/sizes.dart';
 import '../../../../constants/text_strings.dart';
 import '../../controllers/login_controller.dart';
@@ -19,13 +20,13 @@ class LoginFormWidget extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: tFormHeight),
       child: Form(
-        key: controller.loginFormKey,
+        // key: controller.loginFormKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             /// -- Email Field
             TextFormField(
-              validator: Helper.validateEmail,
+              // validator: Helper.validateEmail,
               controller: controller.email,
               decoration:
               const InputDecoration(prefixIcon: Icon(LineAwesomeIcons.user), labelText: tEmail, hintText: tEmail),
@@ -76,6 +77,7 @@ class LoginFormWidget extends StatelessWidget {
                     ? () {}
                     : () => controller.login(),
               ),
+
             ),
           ],
         ),

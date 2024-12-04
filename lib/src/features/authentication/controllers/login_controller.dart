@@ -10,13 +10,26 @@ class LoginController extends GetxController {
   final email = TextEditingController();
   final password = TextEditingController();
 
+  RxBool showPassword = false.obs;
+  RxBool isLoading = false.obs;
+  RxBool isFacebookLoading = false.obs;
+  RxBool isGoogleLoading = false.obs;
+
+
+
+
+
+
+
+
+
   /// TextField Validation
 
   //Call this Function from Design & it will do the rest
   Future<void> login() async {
     String? error = await AuthenticationRepository.instance.loginWithEmailAndPassword(email.text.trim(), password.text.trim());
     if(error != null) {
-      Get.showSnackbar(GetSnackBar(message: error.toString(),));
+        Get.showSnackbar(GetSnackBar(message: error.toString(),));
     }
 
   }
