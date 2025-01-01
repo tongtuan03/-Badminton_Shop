@@ -16,11 +16,15 @@ class SignUpController extends GetxController {
 
   //Call this Function from Design & it will do the rest
   void registerUser(String email, String password) {
-
+    Get.put(AuthenticationRepository());
     String? error = AuthenticationRepository.instance.createUserWithEmailAndPassword(email, password) as String?;
     if(error != null) {
       Get.showSnackbar(GetSnackBar(message: error.toString(),));
     }
+  }
+  void phoneAuthentication(String phoneNo) {
+    Get.put(AuthenticationRepository());
+    AuthenticationRepository.instance.phoneAuthentication(phoneNo);
   }
 
 }

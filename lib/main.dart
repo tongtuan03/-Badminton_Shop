@@ -1,5 +1,6 @@
 import 'package:batminton_shop/src/features/authentication/screens/onboard_screen/onboard_screen.dart';
 import 'package:batminton_shop/src/features/authentication/screens/splash_screen/splash_screen.dart';
+import 'package:batminton_shop/src/features/badminton/screens/dashboard/dashboard.dart';
 import 'package:batminton_shop/src/utilis/theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       defaultTransition: Transition.leftToRightWithFade,
       transitionDuration: const Duration(microseconds: 500),
-      home:  SplashScreen(),
+      home:  Dashboard(),
     );
   }
 }

@@ -1,7 +1,4 @@
-import 'package:batminton_shop/src/features/core/screens/pages/cart_page.dart';
-import 'package:batminton_shop/src/features/core/screens/pages/history_page.dart';
-import 'package:batminton_shop/src/features/core/screens/pages/notification_page.dart';
-import 'package:batminton_shop/src/features/core/screens/pages/person_page.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -9,7 +6,11 @@ import 'package:get/get_core/src/get_main.dart';
 import '../../../../constants/login_state.dart';
 import '../../../authentication/controllers/login_controller.dart';
 import '../../../authentication/screens/welcome_screen/welcome_screen.dart';
+import '../pages/cart_page.dart';
+import '../pages/history_page.dart';
 import '../pages/home_page.dart';
+import '../pages/notification_page.dart';
+import '../pages/person_page.dart';
 
 class Dashboard extends StatelessWidget {
   final controller = Get.put(NavigationController());

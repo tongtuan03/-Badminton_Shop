@@ -5,6 +5,7 @@ import 'package:get/get_core/src/get_main.dart';
 import '../../../../constants/sizes.dart';
 import '../../../../constants/text_strings.dart';
 import '../../controllers/signup_controller.dart';
+import '../forget_password/forget_password_otp/otp_screen.dart';
 
 class SignUpFormWidget extends StatelessWidget {
   const SignUpFormWidget({
@@ -14,13 +15,13 @@ class SignUpFormWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(SignUpController());
-    final _formKey = GlobalKey<FormState>();
+    final formKey = GlobalKey<FormState>();
 
 
     return Container(
       padding: EdgeInsets.symmetric(vertical: tFormHeight - 10),
       child: Form(
-        key: _formKey,
+        key: formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -48,8 +49,13 @@ class SignUpFormWidget extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                  if(_formKey.currentState!.validate()){
+                  if(formKey.currentState!.validate()) {
                     SignUpController.instance.registerUser(controller.email.text.trim(), controller.password.text.trim());
+                    // SignUpController.instance.phoneAuthentication(controller.phoneNo.text.trim());
+                    // Get.to(() => const OTPScreen());
+                  }
+                  else{
+
                   }
                 },
                 child: Text(tSignup.toUpperCase()),
